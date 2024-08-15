@@ -1,0 +1,31 @@
+<?php require "views/shared/header.php" ?>
+
+  <div class="container">
+    <h1 class="text-center my-5"><?= $data['titulo'] ?></h1>
+    <form action="index.php?controlador=productbacklog&accion=update" method="post">
+      <input type="hidden" name="idBacklog" value="<?= $data['idBacklog'] ?>">
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="nomback" name="nomback" placeholder="nomback" value="<?= $data['productbacklog']['nomback'] ?>">
+        <label for="nomback">Nombre del backlog</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="estado" name="estado" placeholder="estado" value="<?= $data['productbacklog']['estado'] ?>">
+        <label for="estado">Estado del Backlog</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="descripcion" name="descripcion" placeholder="descripcion" value="<?= $data['productbacklog']['descripcion'] ?>">
+        <label for="descripcion">Descripcion del Proyecto</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="date" class="form-control" id="fechaInicial" name="fechaInicial" placeholder="fechaInicial" value="<?= $data['productbacklog']['fechaInicial'] ?>">
+        <label for="fechaInicial">Fecha Inicial del Proyecto</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="date" class="form-control" id="fechaFinal" name="fechaFinal" placeholder="fechaFinal" value="<?= $data['productbacklog']['fechaFinal'] ?>">
+        <label for="fechaFinal">Fecha Final del Proyecto</label>
+      </div>
+      <button type="submit" class="btn btn-primary">Guardar</button>
+    </form>
+  </div>
+  
+<?php require "views/shared/footer.php" ?>
